@@ -13,7 +13,7 @@ app.get('/api/:cryptoName', (req, res) => {
   else res.status(404).send('404: Page not found');
 });
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.status(404).send('404: Page not found');
 });
 
