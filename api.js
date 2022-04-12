@@ -6,8 +6,10 @@ const ethPrice = 3018.72;
 
 app.get('/api/:cryptoName', (req, res) => {
   cryptoName = req.params.cryptoName;
-  if (cryptoName === 'btc') res.send({ amount: req.query.usd / btcPrice });
-  else if (cryptoName === 'eth') res.send({ amount: req.query.usd / ethPrice });
+  if (cryptoName === 'btc')
+    res.status(200).send({ amount: req.query.usd / btcPrice });
+  else if (cryptoName === 'eth')
+    res.status(200).send({ amount: req.query.usd / ethPrice });
   else res.status(404).send('404: Page not found');
 });
 
