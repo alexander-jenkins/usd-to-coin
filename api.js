@@ -8,11 +8,11 @@ app.get('/api/:cryptoName', (req, res) => {
   cryptoName = req.params.cryptoName;
   if (cryptoName === 'btc') res.send({ amount: req.query.usd / btcPrice });
   else if (cryptoName === 'eth') res.send({ amount: req.query.usd / ethPrice });
-  else res.sendStatus(404);
+  else res.status(404).send('404: Page not found');
 });
 
 app.get('/*', (req, res) => {
-  res.sendStatus(404);
+  res.status(404).send('404: Page not found');
 });
 
 app.listen(3000, () => {
