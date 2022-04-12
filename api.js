@@ -5,7 +5,7 @@ const btcPrice = 39971.2;
 const ethPrice = 3018.72;
 
 app.get('/api/:cryptoName', (req, res) => {
-  cryptoName = req.params.cryptoName;
+  let cryptoName = req.params.cryptoName;
   if (cryptoName === 'btc')
     res.status(200).send({ amount: req.query.usd / btcPrice });
   else if (cryptoName === 'eth')
