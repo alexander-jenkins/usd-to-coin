@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = 3000;
 
 const btcPrice = 39971.2;
 const ethPrice = 3018.72;
@@ -17,6 +18,6 @@ app.get('*', (req, res) => {
   res.status(404).send('404: Page not found');
 });
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(port, () => {
+  console.log(`API is running on http://127.0.0.1:${port}`);
 });
